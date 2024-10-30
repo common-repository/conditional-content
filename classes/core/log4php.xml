@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log4php:configuration xmlns:log4php="http://logging.apache.org/log4php/">
+    <appender name="appenderLocalFile" class="com\extremeidea\wordpress\plugin\conditional\content\classes\core\LoggerAppenderDailyFile">
+        <layout class="com\extremeidea\php\tools\log4php\LoggerLayoutPattern">
+            <param name="conversionPattern" value="%d{m/d/y H:i:s,u} %server{REMOTE_ADDR} [%t] %p %c %x - %m%n" />
+        </layout>
+        <param name="datePattern" value="Y-m-d"/>
+        <param name="file" value="Conditional_Content_%s.log"/>
+    </appender>
+
+    <logger name="localFileLogger">
+        <appender_ref ref="appenderLocalFile"/>
+    </logger>
+    <root/>
+</log4php:configuration>

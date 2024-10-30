@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "http://example.com/example.json",
+  "properties": {
+    "head": {
+      "id": "/properties/head",
+      "items": {
+        "id": "/properties/head/items",
+        "properties": {
+          "condition": {
+            "id": "/properties/head/items/properties/condition",
+            "properties": {
+              "function": {
+                "id": "/properties/head/items/properties/condition/properties/function",
+                "type": "string"
+              }
+            },
+            "required": [
+              "function"
+            ],
+            "type": "object"
+          },
+          "output": {
+            "id": "/properties/head/items/properties/output",
+            "properties": {
+              "from_file": {
+                "id": "/properties/head/items/properties/output/properties/from_file",
+                "type": "string"
+              },
+              "from_php_func": {
+                "id": "/properties/head/items/properties/output/properties/from_php_func",
+                "type": "string"
+              },
+              "from_php_inc": {
+                "id": "/properties/head/items/properties/output/properties/from_php_inc",
+                "type": "string"
+              },
+              "from_text": {
+                "id": "/properties/head/items/properties/output/properties/from_text",
+                "type": "string"
+              },
+              "from_text_array": {
+                "id": "/properties/head/items/properties/output/properties/from_text_array",
+                "type": "array"
+              }
+            },
+            "anyOf": [
+              {"required" : ["from_file"]},
+              {"required" : ["from_text"]},
+              {"required" : ["from_text_array"]},
+              {"required" : ["from_php_func"]},
+              {"required" : ["from_php_inc"]}
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "output",
+          "condition"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "sidebars": {
+      "id": "/properties/sidebars",
+      "items": {
+        "id": "/properties/sidebars/items",
+        "properties": {
+          "name": {
+            "id": "/properties/sidebars/items/properties/name",
+            "type": "string"
+          },
+          "condition": {
+            "id": "/properties/sidebars/items/properties/condition",
+            "properties": {
+              "function": {
+                "id": "/properties/sidebars/items/properties/condition/properties/function",
+                "type": "string"
+              }
+            },
+            "required": [
+              "function"
+            ],
+            "type": "object"
+          },
+          "output": {
+            "id": "/properties/sidebars/items/properties/output/properties/output",
+            "properties": {
+              "from_file": {
+                "id": "/properties/sidebars/items/properties/output/properties/from_file",
+                "type": "string"
+              },
+              "from_php_func": {
+                "id": "/properties/sidebars/items/properties/output/properties/from_php_func",
+                "type": "string"
+              },
+              "from_php_inc": {
+                "id": "/properties/sidebars/items/properties/output/properties/from_php_inc",
+                "type": "string"
+              },
+              "from_text": {
+                "id": "/properties/sidebars/items/properties/output/properties/from_text",
+                "type": "string"
+              },
+              "from_text_array": {
+                "id": "/properties/sidebars/items/properties/output/properties/from_text_array",
+                "type": "array"
+              }
+            },
+            "anyOf": [
+              {"required" : ["from_file"]},
+              {"required" : ["from_text"]},
+              {"required" : ["from_text"]},
+              {"required" : ["from_php_func"]},
+              {"required" : ["from_php_inc"]}
+            ],
+            "type": "object"
+          },
+          "position": {
+            "id": "/properties/sidebars/items/properties/position",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "position",
+          "condition",
+          "output",
+          "name"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
